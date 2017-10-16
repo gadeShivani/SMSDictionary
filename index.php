@@ -41,7 +41,7 @@ if( $body == 'hello' ){
     $response->message('Goodbye');
 }else{
 	
-	getSynonims($body);
+	 $response->getSynonims($body);
 }
 print $response;
 
