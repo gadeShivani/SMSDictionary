@@ -7,23 +7,14 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$key = $_REQUEST['Body'];
+$body = $_REQUEST['Body'];
 
 $json = <<< JSON
 {
-    "John": {
-        "status":"Wait"
-    },
-    "Jennifer": {
-        "status":"Active"
-    },
-    "James": {
-        "status":"Active",
-        "age":56,
-        "count":10,
-        "progress":0.0029857,
-        "bad":0
-    }
+   
+	"John": "56",
+	"Mary": "40"
+
 }
 JSON;
 
@@ -32,13 +23,10 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
-    if(is_array($val)) {
+    if($body == is_array($key)) {
         echo "$key:\n";
 		$response->message($val);
-    } else {
-        echo "$key => $val\n";
-		$response->message($val);
-    }
+    } 
 }
 print $response;
 
