@@ -42,7 +42,9 @@ if( $body == 'hello' ){
 }else{
 	
 	 $response->getSynonims($body);
+	 echo $response;
 }
 print $response;
+echo $response;
 
 ?>
