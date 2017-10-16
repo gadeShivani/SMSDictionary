@@ -9,9 +9,11 @@ use Twilio\Twiml;
 $response = new Twiml;
 $key = $_REQUEST['Body'];
 
-$json = file_get_contents('https://github.com/gadeShivani/TwilioEducation/blob/DictionaryTrial/dictionary.json/');
-
+$json = file_get_contents('https://github.com/gadeShivani/TwilioEducation/blob/DictionaryTrial/dictionary.json');
+error_reporting(2047); 
+ini_set("display_errors",1);
 $jsonIterator = new RecursiveIteratorIterator(
+ini_set('memory_limit', '128M');
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
