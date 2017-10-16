@@ -37,14 +37,14 @@ function getSynonims($body)
 }
 if( $body == 'hello' ){
     $response->message('Hi!');
-}else if( $body == 'bye' ){
+}else if( $body == 'bye' ){	
     $response->message('Goodbye');
 }else{
 	
 	 $response->getSynonims($body);
-	 echo $response;
+	
 }
 print $response;
-echo $response;
+
 
 ?>
