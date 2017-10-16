@@ -18,16 +18,19 @@ $json = <<< JSON
 }
 JSON;
 
-$jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($json, TRUE)),
+$json=json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
     if($body == is_array($key)) {
         echo "$key:\n";
 		$response->message($val);
+		$message = $response->message();
+$message->body($val);
     } 
 }
+header("content-type: text/xml");
+echo $response;
 print $response;
 
 ?>
