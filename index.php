@@ -9,7 +9,7 @@ use Twilio\Twiml;
 $response = new Twiml;
 $key = $_REQUEST['Body'];
 
-$json = file_get_contents('TwilioEducation/dictionary.json/');
+$json = file_get_contents('https://github.com/gadeShivani/TwilioEducation/blob/DictionaryTrial/dictionary.json/');
 
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
