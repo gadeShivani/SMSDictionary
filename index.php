@@ -24,16 +24,11 @@ function object_to_array($data)
 
 function getSynonims($body)
 {
-    $url = 'https://www.google.com/search?q=google+dictionary&oq=google+dictionary&aqs=chrome..69i57j69i60l2j0l3.5177j0j4&sourceid=chrome&ie=UTF-8#dobs='.$body;
-    $ret = null;
+    $url = 'http://services.aonaware.com/DictService/Default.aspx?action=define&dict=*&query='.$body;
+    
     $data = file_get_contents($url);
-    $data = object_to_array(json_decode($data));
-    if (isset($data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms']))
-        $synonyms = $data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms'];
-    foreach ($synonyms as $key => $synonym) {
-        $ret[$key] = $synonym['nym'];
-    }
-    return $ret;
+    
+    return $data;
 }
 if( $body == 'hello' ){
     $response->message('Hi!');
