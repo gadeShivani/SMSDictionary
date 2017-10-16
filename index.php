@@ -24,7 +24,7 @@ function object_to_array($data)
 
 function getSynonims($body)
 {
-    $url = 'http://services.aonaware.com/DictService/Default.aspx?action=define&dict=*&query='.$body;
+    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$body;
     
     $data = file_get_contents($url);
     
