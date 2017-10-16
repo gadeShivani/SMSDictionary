@@ -7,39 +7,19 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$body = $_REQUEST['Body'];
-function object_to_array($data)
-{
-    if (is_array($data) || is_object($data))
-    {
-        $result = array();
-        foreach ($data as $key => $value)
-        {
-            $result[$key] = object_to_array($value);
-        }
-        return $result;
-    }
-    return $data;
-}
+$key = $_REQUEST['Body'];
 
-function getSynonims($body)
-{
-    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$body;
-    
-    $data = file_get_contents($url);
-    
-    return $data;
+$jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($json, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
+
+foreach ($jsonIterator as $key => $val) {
+    if(is_array($val)) {
+        echo "$key:\n";
+    } else {
+        echo "$key => $val\n";
+    }
 }
-if( $body == 'hello' ){
-    $response->message('Hi!');
-}else if( $body == 'bye' ){	
-    $response->message('Goodbye');
-}else{
-	
-	 $response->getSynonims($body);
-	
-}
-print $response;
 
 
 ?>
