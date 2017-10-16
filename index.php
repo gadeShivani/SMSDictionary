@@ -9,11 +9,25 @@ use Twilio\Twiml;
 $response = new Twiml;
 $key = $_REQUEST['Body'];
 
-$json = file_get_contents('https://github.com/gadeShivani/TwilioEducation/blob/DictionaryTrial/dictionary.json');
-error_reporting(2047); 
-ini_set("display_errors",1);
+$json = <<< JSON
+{
+    "John": {
+        "status":"Wait"
+    },
+    "Jennifer": {
+        "status":"Active"
+    },
+    "James": {
+        "status":"Active",
+        "age":56,
+        "count":10,
+        "progress":0.0029857,
+        "bad":0
+    }
+}
+JSON;
+
 $jsonIterator = new RecursiveIteratorIterator(
-ini_set('memory_limit', '128M');
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
