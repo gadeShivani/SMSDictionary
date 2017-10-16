@@ -18,8 +18,7 @@ $json = <<< JSON
 }
 JSON;
 
-$json=json_decode($json, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
+$json=json_decode($json, TRUE));
 
 foreach ($jsonIterator as $key => $val) {
     if($body == is_array($key)) {
