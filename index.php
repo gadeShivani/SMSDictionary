@@ -24,7 +24,7 @@ function object_to_array($data)
 
 function getSynonims($word)
 {
-    $url = 'https://www.googleapis.com/scribe/v1/research?key=AIzaSyDqVYORLCUXxSv7zneerIgC2UYMnxvPeqQ&dataset=dictionary&dictionaryLanguage=en&query='.$word;
+    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$word;
     $ret = null;
     $data = file_get_contents($url);
     $data = object_to_array(json_decode($data));
