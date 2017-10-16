@@ -24,7 +24,7 @@ function object_to_array($data)
 
 function getSynonims($body)
 {
-    $url = 'https://www.googleapis.com/scribe/v1/research?key=AIzaSyDqVYORLCUXxSv7zneerIgC2UYMnxvPeqQ&dataset=dictionary&dictionaryLanguage=en&query='.$body;
+    $url = 'https://www.google.com/search?q=google+dictionary&oq=google+dictionary&aqs=chrome..69i57j69i60l2j0l3.5177j0j4&sourceid=chrome&ie=UTF-8#dobs='.$body;
     $ret = null;
     $data = file_get_contents($url);
     $data = object_to_array(json_decode($data));
@@ -41,7 +41,7 @@ if( $body == 'hello' ){
     $response->message('Goodbye');
 }else{
 	
-	 $response->print_r(getSynonims($body));
+	 $response->getSynonims($body);
 	 echo $response;
 }
 print $response;
