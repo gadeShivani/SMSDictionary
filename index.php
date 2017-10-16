@@ -22,24 +22,20 @@ function object_to_array($data)
     return $data;
 }
 
-function getSynonims($body)
+function getSynonims($word)
 {
-    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$body;
-    
+    $url = 'https://www.googleapis.com/scribe/v1/research?key=AIzaSyDqVYORLCUXxSv7zneerIgC2UYMnxvPeqQ&dataset=dictionary&dictionaryLanguage=en&query='.$word;
+    $ret = null;
     $data = file_get_contents($url);
-    
-    return $data;
+    $data = object_to_array(json_decode($data));
+    if (isset($data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms']))
+        $synonyms = $data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms'];
+    foreach ($synonyms as $key => $synonym) {
+        $ret[$key] = $synonym['nym'];
+    }
+    return $ret;
 }
-if( $body == 'hello' ){
-    $response->message('Hi!');
-}else if( $body == 'bye' ){	
-    $response->message('Goodbye');
-}else{
-	
-	 $response->getSynonims($body);
-	
-}
-print $response;
+print_r(getSynonims($word));
 
 
 ?>
