@@ -9,6 +9,8 @@ use Twilio\Twiml;
 $response = new Twiml;
 $key = $_REQUEST['Body'];
 
+$json = dictionary.php;
+
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
