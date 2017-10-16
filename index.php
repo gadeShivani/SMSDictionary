@@ -7,7 +7,7 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$word = $_REQUEST['Body'];
+$body = $_REQUEST['Body'];
 function object_to_array($data)
 {
     if (is_array($data) || is_object($data))
@@ -22,20 +22,24 @@ function object_to_array($data)
     return $data;
 }
 
-function getSynonims($word)
+function getSynonims($body)
 {
-    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$word;
-    $ret = null;
+    $url = 'http://googledictionary.freecollocation.com/meaning?word='.$body;
+    
     $data = file_get_contents($url);
-    $data = object_to_array(json_decode($data));
-    if (isset($data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms']))
-        $synonyms = $data['data'][0]['dictionary']['definitionData']['0']['meanings'][0]['synonyms'];
-    foreach ($synonyms as $key => $synonym) {
-        $ret[$key] = $synonym['nym'];
-    }
-    return $ret;
+    
+    return $data;
 }
-print_r(getSynonims($word));
+if( $body == 'hello' ){
+    $response->message('Hi!');
+}else if( $body == 'bye' ){	
+    $response->message('Goodbye');
+}else{
+	
+	 $response->getSynonims($body);
+	
+}
+print $response;
 
 
 ?>
