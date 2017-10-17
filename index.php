@@ -25,10 +25,12 @@ foreach ($jsonIterator as $key => $val) {
     if($body == $key ) {
         echo "$key:$val";
 		$response->redirect("http://www.urbandictionary.com/define.php?term=".$body);
+		$response->message('val');
     } else {
         echo "$key => $val\n";
 		echo "$body\n";
-		
+		$response->redirect("http://www.urbandictionary.com/define.php?term=".$body);
+		$response->message('val');
     }
 }
 print $response;
