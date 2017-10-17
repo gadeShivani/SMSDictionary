@@ -22,16 +22,11 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
-    if($body == $key ) {
-        echo "$key:$val";
-		$response->redirect("http://www.urbandictionary.com/define.php?term=".$body);
-		$response->message("val");
-    } else {
-        echo "$key => $val\n";
-		echo "$body\n";
-		$response->redirect("http://www.urbandictionary.com/define.php?term=".$body);
-		$response->message("val");
-    }
+   if( $body == $key ){
+    $response->message('Hi!');
+}else if( $body == 'bye' ){
+    $response->message('Goodbye');
+}
 }
 print $response;
 
