@@ -7,27 +7,38 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$body = $_REQUEST['Body'];
+$key = $_REQUEST['Body'];
 
 $json = <<< JSON
 {
-   
-	"John": "56",
-	"Mary": "40"
-
+    "John": {
+        "status":"Wait"
+    },
+    "Jennifer": {
+        "status":"Active"
+    },
+    "James": {
+        "status":"Active",
+        "age":56,
+        "count":10,
+        "progress":0.0029857,
+        "bad":0
+    }
 }
 JSON;
 
-$json=json_decode($json, TRUE));
- 
- echo $json;
-echo ini_get('display_errors');
+$jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($json, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
 
-if (!ini_get('display_errors')) {
-    ini_set('display_errors', '1');
+foreach ($jsonIterator as $key => $val) {
+    if(is_array($val)) {
+        echo "$key:\n";
+		$response->message($val);
+    } else {
+        echo "$key => $val\n";
+    }
 }
-
-echo ini_get('display_errors');
 print $response;
 
 ?>
