@@ -4,7 +4,7 @@ require_once 'twilio-php-master/Twilio/autoload.php'; // Loads the library
 use Twilio\Twiml;
 $response = new Twiml;
 $body = $_REQUEST['Body'];
-$json = dictionary.json;
+$json = file_get_contents('./dictionary.json');
 
 JSON;
 $jsonIterator = new RecursiveIteratorIterator(
