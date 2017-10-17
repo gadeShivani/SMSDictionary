@@ -11,19 +11,9 @@ $key = $_REQUEST['Body'];
 
 $json = <<< JSON
 {
-    "John": {
-        "status":"Wait"
-    },
-    "Jennifer": {
-        "status":"Active"
-    },
-    "James": {
-        "status":"Active",
-        "age":56,
-        "count":10,
-        "progress":0.0029857,
-        "bad":0
-    }
+    "John":56,
+    "Jennifer":45,
+    "James":44
 }
 JSON;
 
@@ -32,9 +22,9 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
-    if(is_array($val)) {
+    if($key == ) {
         echo "$key:\n";
-		$response->message($val);
+		$response->message("$val");
     } else {
         echo "$key => $val\n";
     }
