@@ -7,7 +7,7 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$body = $_REQUEST['Body'];
+$body = "John";
 
 $json = <<< JSON
 {
