@@ -9,7 +9,11 @@ if( $body == 'Hello' ){
     $response->message('Hi!');
 }else if( $body == 'bye' ){	
     $response->message('Goodbye');
-}else{
+}
+else if( $body == 'Concept' ){	
+    $response->message('Concept: an abstract or general idea inferred from specific instances');
+}
+else{
 	
 	  $response->message('Please Enter A Valid Word');
 	
