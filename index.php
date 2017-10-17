@@ -24,7 +24,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 foreach ($jsonIterator as $key => $val) {
    if( $body == $key ){
 	  
-    $response->message(string strval ( mixed $val ));
+    $response->message('$val');
 	
 }else if( $body == 'bye' ){
     $response->message('Goodbye');
