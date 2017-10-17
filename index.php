@@ -24,8 +24,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 foreach ($jsonIterator as $key => $val) {
    if( $body == $key ){
 	  
-    $response->message('Store Location: 123 Easy St.',
-    ['action' => 'http://www.urbandictionary.com/define.php?term=url', 'method' => 'POST']);
+    $response->$val;
 
 	
 }else if( $body == 'bye' ){
