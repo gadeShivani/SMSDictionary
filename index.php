@@ -11,7 +11,7 @@ if( $body == 'Hello' ){
     $response->message('Goodbye');
 }else{
 	
-	 $response->getSynonims($body);
+	  $response->message('Please Enter A Valid Word');
 	
 }
 print $response;
