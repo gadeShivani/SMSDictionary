@@ -23,10 +23,12 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
     if($body == $key ) {
-        echo "$key:\n";
+        echo "$key:$val";
 		$response->message('$val');
     } else {
         echo "$key => $val\n";
+		echo "$body\n";
+		
     }
 }
 print $response;
