@@ -19,17 +19,15 @@ $json = <<< JSON
 JSON;
 
 $json=json_decode($json, TRUE));
+$contents = utf8_encode($json);
+ $results = json_decode($contents); 
+ 
+ if(array_key_exists($body,$results)){
+	 
+	 $firstName = $jsonArray[$body];
+	 $response->message($firstName);
+ }
 
-foreach ($jsonIterator as $key => $val) {
-    if($body == is_array($key)) {
-        echo "$key:\n";
-		$response->message($val);
-		$message = $response->message();
-$message->body($val);
-    } 
-}
-header("content-type: text/xml");
-echo $response;
 print $response;
 
 ?>
