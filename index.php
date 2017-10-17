@@ -25,7 +25,7 @@ function getSynonims($body)
     
     return $data;
 }
-if( $body == 'hello' ){
+if( $body == 'Hello' ){
     $response->message('Hi!');
 }else if( $body == 'bye' ){	
     $response->message('Goodbye');
