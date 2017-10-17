@@ -20,11 +20,7 @@ JSON;
 
 $json=json_decode($json, TRUE));
  
- if(array_key_exists($body,$json)){
-	 
-	 $firstName = $jsonArray[$body];
-	 $response->message($firstName);
- }
+ echo $json;
 echo ini_get('display_errors');
 
 if (!ini_get('display_errors')) {
