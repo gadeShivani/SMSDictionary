@@ -24,7 +24,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 foreach ($jsonIterator as $key => $val) {
     if($key == ) {
         echo "$key:\n";
-		$response->message("$val");
+		$response->message('$val');
     } else {
         echo "$key => $val\n";
     }
