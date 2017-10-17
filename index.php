@@ -15,8 +15,6 @@ foreach ($jsonIterator as $key => $val) {
 	  
     $response->$val;
 	
-}else if( $body == 'stop' ){
-    $response->message('Goodbye');
 }
 }
 print $response;
