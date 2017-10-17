@@ -7,7 +7,7 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-$body = "John";
+$body = $_REQUEST['Body'];
 
 $json = <<< JSON
 {
@@ -24,7 +24,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 foreach ($jsonIterator as $key => $val) {
     if($body == $key ) {
         echo "$key:$val";
-		$response->message($val);
+		$response->redirect("http://www.urbandictionary.com/define.php?term=".$body);
     } else {
         echo "$key => $val\n";
 		echo "$body\n";
