@@ -37,10 +37,51 @@ else if( $body == 'Property' ){
 else if( $body == 'Fancy' ){	
     $response->message('Fancy: imagine; conceive of; see in ones mind');
 }
-else{
-	
+else if( $body == 'Approach:' ){	
+    $response->message('Approach: Move towards');
+}
+else if( $body == 'Establish' ){	
+    $response->message('Establish: Set up or found');
+}
+else if( $body == 'Utter' ){	
+    $response->message('Utter: Without qualification');
+}
+else if( $body == 'Conduct' ){	
+    $response->message('Conduct: direct the course of; manage or control');
+}
+else if( $body == 'Engange' ){	
+    $response->message('Engage: Consume all of ones attention or time');
+}
+else if( $body == 'Practice' ){	
+    $response->message('Practice: A customary way of operation or behavior');
+}
+else if( $body == 'Intend' ){	
+    $response->message('Intend: Have in mind as a purpose');
+}
+else if( $body == 'Concern' ){	
+    $response->message('Concern: something that interests you because it is important');
+}
+else if( $body == 'Commit' ){	
+    $response->message('Commit: perform an act, usually with a negative connotation');
+}
+else if( $body == 'Issue' ){	
+    $response->message('issue: some situation or event that is thought about');
+}
+else if( $body == 'Minute'){	
+    $response->message('Minute: infinitely or immeasurably small');
+}
+else if( $body == 'Accord' ){	
+    $response->message('Accord: Concurrence of opinion');
+}
+else if( $body == 'Evident' ){	
+    $response->message('Evident: Clearly revealed to the mind or the senses or judgment');
+}
+else if( $body == 'Consider'){	
+    $response->message('Minute: infinitely or immeasurably small');
+}
+else
+{
 	  $response->message('Please Enter A Valid Word');
-	
 }
 print $response;
 ?>
