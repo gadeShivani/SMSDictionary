@@ -22,7 +22,7 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
-    if($key == ) {
+    if($body == $key ) {
         echo "$key:\n";
 		$response->message('$val');
     } else {
