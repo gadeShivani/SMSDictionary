@@ -77,7 +77,7 @@ else if( $body == 'Evident' ){
     $response->message('Evident: Clearly revealed to the mind or the senses or judgment');
 }
 else if( $body == 'Consider'){	
-    $response->message('Minute: infinitely or immeasurably small');
+    $response->message('Consider: Deem to be');
 }
 else
 {
