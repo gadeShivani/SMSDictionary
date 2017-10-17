@@ -10,7 +10,6 @@ $response = new Twiml;
 $body = $_REQUEST['Body'];
 
 
-}
 if( $body == 'Consider' ){
     $response->message('Consider: deem to be!');
 }else if( $body == 'Minute'){	
