@@ -19,10 +19,8 @@ $json = <<< JSON
 JSON;
 
 $json=json_decode($json, TRUE));
-$contents = utf8_encode($json);
- $results = json_decode($contents); 
  
- if(array_key_exists($body,$results)){
+ if(array_key_exists($body,$json)){
 	 
 	 $firstName = $jsonArray[$body];
 	 $response->message($firstName);
