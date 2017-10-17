@@ -23,8 +23,8 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
    if( $body == $key ){
-	   string strval ( mixed $val );
-    $response->message(strval);
+	  
+    $response->message(string strval ( mixed $val ));
 	
 }else if( $body == 'bye' ){
     $response->message('Goodbye');
