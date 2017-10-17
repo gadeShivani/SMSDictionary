@@ -49,7 +49,7 @@ else if( $body == 'Utter' ){
 else if( $body == 'Conduct' ){	
     $response->message('Conduct: direct the course of; manage or control');
 }
-else if( $body == 'Engange' ){	
+else if( $body == 'Engage' ){	
     $response->message('Engage: Consume all of ones attention or time');
 }
 else if( $body == 'Practice' ){	
