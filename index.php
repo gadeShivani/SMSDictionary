@@ -14,17 +14,16 @@ $word = $_POST['Body'];
 
 
 
-$urban_response = Unirest\Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
+$oxford_response = Unirest\Request::get("https://joughtred-oxford-dictionaries-v1.p.mashape.com/domains/{en}",
   array(
-    "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK",
-    "Accept" => "text/plain"
+    "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK"
   )
 );
 //print_r($urban_response);
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
 
-$meaning = $urban_response->body;
+$meaning = $oxford_response->body;
 $defines = $meaning->list;
 foreach ($defines as $define){
   $definition = $define->definition;
