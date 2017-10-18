@@ -25,7 +25,7 @@ $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
-    $urban_response = Unirest\Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
+    $urban_response = Unirest/Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
       array(
         "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK",
         "Accept" => "text/plain"
