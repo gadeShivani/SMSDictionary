@@ -21,8 +21,9 @@ $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
 $meaning_result = '';
 echo $mean;
+
 foreach($mean->entries as $row){
-  forecah ($row as $key=>$val){
+  foreach ($row as $key=>$val){
     if($val != ''){
       $meaning_result = $meaning_result . $val;
     }
