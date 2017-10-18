@@ -17,9 +17,11 @@ $urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
 $meaning = $urban_response->raw_body;
-$defines = $meaning->meaning[1];
-print_r($meaning);
-echo gettype($meaning);
+$defines = $meaning->meaning;
+$mean = (array) json_encode($meaning);
+print_r($meaning->meaning);
+
+echo $meaning;
 //foreach ($defines as $define){
 
 //$definition = $define->definition;
