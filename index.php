@@ -19,8 +19,11 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 $meaning = $urban_response->body;
 $defines = $meaning->list;
 foreach ($defines as $define){
-  $definition = $define->definition[5];
+
+  $definition = $define->definition;
+
   break;
+
 }
 $response->message($definition);
 echo $response;
