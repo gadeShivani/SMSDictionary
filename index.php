@@ -24,7 +24,6 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 $obj=json_decode($urban_response,TRUE);
 echo $obj;
 
-yaha pe decode karna tha
 
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
