@@ -35,6 +35,7 @@ $jsonIterator = new RecursiveIteratorIterator(
   $obj=json_decode($urban_response,TRUE);
     $meaning = $obj['list'][5]['defination'];
     print_r($meaning);
+    echo $meaning;
 foreach ($jsonIterator as $key => $val) {
 
    if( $word == $key ){
