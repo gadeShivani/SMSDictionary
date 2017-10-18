@@ -31,8 +31,8 @@ $jsonIterator = new RecursiveIteratorIterator(
         "Accept" => "text/plain"
       )
     );
-  //  print_r($urban_response);
-  $obj=json_decode($urban_response);
+   //print_r($urban_response);
+  $obj=json_decode($urban_response,TRUE);
     $meaning = $obj['list'][5]['defination'];
     print_r($meaning);
 foreach ($jsonIterator as $key => $val) {
