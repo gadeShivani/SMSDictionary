@@ -20,7 +20,6 @@ $meaning_result = $urban_response->body;
 $meanings = $meaning_result->meaning;
 
 $meanings = json_decode(json_encode($meanings),TRUE);
-print_r($meanings);
 $meaning_send = '';
 foreach ($meanings as $key=>$val){
   print_r($key);
@@ -28,7 +27,8 @@ foreach ($meanings as $key=>$val){
     $meaning_send = $meaning_send . $val;
   }
 }
-echo $meaning_send;
+$response->message($meaning_send);
+echo $response;
 
 /*$meaning = $urban_response->raw_body;
 $defines = $meaning->meaning;
