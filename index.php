@@ -26,8 +26,8 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 
 foreach ($jsonIterator as $key => $val) {
-    echo $key.' '.$value;
-   if( $body == $key ){
+
+   if( $word == $key ){
 
     $response->message($val);
 
