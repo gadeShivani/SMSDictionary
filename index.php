@@ -22,17 +22,13 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 );
 //print_r($urban_response);
 $obj=json_encode($urban_response,TRUE);
-echo $obj;
-echo gettype($obj);
 
 
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
- //$name="body";
   $meaning = $obj['body']['list'];
-  // print_r($meaning);
     echo $meaning;
 foreach ($jsonIterator as $key => $val) {
 print_r($key);
