@@ -10,30 +10,29 @@ $response = new Twiml;
 if(isset($_GET['keyword']))
 {
 $word = $_GET['keyword'];
-echo $word;
-echo 'yes';
+
+
+$json = <<< JSON
+{
+    "John":56,
+    "Jennifer":45,
+    "James":44
 }
-// // $json = './dictionary.json';
-// $json = <<< JSON
-// {
-//     "John":56,
-//     "Jennifer":45,
-//     "James":44
-// }
-// JSON;
-//
-// $jsonIterator = new RecursiveIteratorIterator(
-//     new RecursiveArrayIterator(json_decode($json, TRUE)),
-//     RecursiveIteratorIterator::SELF_FIRST);
+JSON;
+
+$jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($json, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
 
 
-// foreach ($jsonIterator as $key => $val) {
-//   //  if( $body == $key ){
-// 	  var_dump($val);
-//     die();
-//     // $response->message($val);
-//
-// }
-// print $response;
+foreach ($jsonIterator as $key => $val) {
+   if( $body == $key ){
+
+    $response->message($val);
+
+}
+print $response;
+}
+
 
 ?>
