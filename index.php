@@ -12,15 +12,6 @@ if(isset($_POST['Body']))
 {
 $word = $_POST['Body'];
 
-
-$json = <<< JSON
-{
-    "John":"56",
-    "Jennifer":"45",
-    "James":"44"
-}
-JSON;
-
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
@@ -33,11 +24,6 @@ $jsonIterator = new RecursiveIteratorIterator(
     );
     print_r($urban_response);
 
-foreach ($jsonIterator as $key => $val) {
-
-   if( $word == $key ){
-
-    $response->message($val);
     echo $response;
 
 }
