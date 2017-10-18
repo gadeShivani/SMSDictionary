@@ -23,16 +23,16 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 //print_r($urban_response);
 //https://github.com/Kong/unirest-php/issues/104
 $obj=json_encode($urban_response->body,TRUE);
-echo $obj;
+
 
 
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);*/
 
-  $meaning = json_decode($obj['list']);
+  $meaning = $obj['list'];
     echo $meaning;
-foreach ($jsonIterator as $key => $val) {
+/*foreach ($jsonIterator as $key => $val) {
 print_r($key);
 print_r($val);
    if( $word == $key ){
@@ -42,7 +42,7 @@ print_r($val);
 
 }
 
-}
+}*/
 
 }
 ?>
