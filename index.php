@@ -10,27 +10,27 @@ use Twilio\Twiml;
 $response = new Twiml;
 $body = $_REQUEST['keyword'];
 
-// $json = './dictionary.json';
-$json = <<< JSON
-{
-    "John":56,
-    "Jennifer":45,
-    "James":44
-}
-JSON;
+// // $json = './dictionary.json';
+// $json = <<< JSON
+// {
+//     "John":56,
+//     "Jennifer":45,
+//     "James":44
+// }
+// JSON;
+//
+// $jsonIterator = new RecursiveIteratorIterator(
+//     new RecursiveArrayIterator(json_decode($json, TRUE)),
+//     RecursiveIteratorIterator::SELF_FIRST);
 
-$jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($json, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
 
-p
-foreach ($jsonIterator as $key => $val) {
-  //  if( $body == $key ){
-	  var_dump($val);
-    die();
-    // $response->message($val);
-
-}
-print $response;
-
+// foreach ($jsonIterator as $key => $val) {
+//   //  if( $body == $key ){
+// 	  var_dump($val);
+//     die();
+//     // $response->message($val);
+//
+// }
+// print $response;
+echo 'ji';
 ?>
