@@ -23,6 +23,7 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 //print_r($urban_response);
 //https://github.com/Kong/unirest-php/issues/104
 $obj=json_encode($urban_response->body,TRUE);
+echo $obj;
 
 
 /*$jsonIterator = new RecursiveIteratorIterator(
