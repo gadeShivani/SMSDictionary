@@ -22,14 +22,14 @@ $meanings = $meaning_result->meaning;
 $meanings = json_decode(json_encode($meanings),TRUE);
 print_r($meanings);
 $meaning_send = '';
-foreach ($mean_results as $key=>$val){
+foreach ($meanings as $key=>$val){
   print_r($key);
-  echo "--2";
   if($val != ''){
     $meaning_send = $meaning_send . $val;
   }
 }
 echo $meaning_send;
+
 /*$meaning = $urban_response->raw_body;
 $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
