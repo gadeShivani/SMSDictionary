@@ -23,14 +23,14 @@ $oxford_response = Unirest\Request::get("https://joughtred-oxford-dictionaries-v
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
 
-$meaning = $oxford_response->body;
-$defines = $meaning->list;
-foreach ($defines as $define){
-  $definition = $define->definition;
-  break;
-}
-$response->message($definition);
-echo $response;
+//$meaning = $oxford_response->body;
+//$defines = $meaning->list;
+//foreach ($defines as $define){
+//  $definition = $define->definition;
+//  break;
+//}
+//$response->message($definition);
+ print_r($oxford_response);
 
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
