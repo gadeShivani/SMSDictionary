@@ -1,15 +1,17 @@
 <?php
 // Get the PHP helper library from twilio.com/docs/php/install
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+
 require_once 'twilio-php-master/Twilio/autoload.php'; // Loads the library
 use Twilio\Twiml;
 
 
 
 $response = new Twiml;
-$body = $_REQUEST['keyword'];
-
+if(isset(keyword))
+{
+$word = $_GET['keyword'];
+echo $word;
+}
 // // $json = './dictionary.json';
 // $json = <<< JSON
 // {
@@ -32,5 +34,5 @@ $body = $_REQUEST['keyword'];
 //
 // }
 // print $response;
-echo 'ji';
+
 ?>
