@@ -24,6 +24,7 @@ $jsonIterator = new RecursiveIteratorIterator(
     );
     print_r($urban_response);
 
+    $response->message($val);
     echo $response;
 
 }
