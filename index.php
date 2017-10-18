@@ -19,7 +19,7 @@ $urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p
 $meaning_result = $urban_response->body;
 $meanings = $meaning_result->meaning;
 
-$meanings = json_encode(json_decode($meanings));
+$meanings = json_decode(json_encode($meanings),TRUE);
 print_r($meanings);
 $meaning_send = '';
 foreach ($mean_results as $key=>$val){
