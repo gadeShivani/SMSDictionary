@@ -31,8 +31,8 @@ foreach ($jsonIterator as $key => $val) {
     $response->message($val);
 
 }
+
+}
 print $response;
 }
-
-
 ?>
