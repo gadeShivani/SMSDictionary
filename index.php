@@ -14,9 +14,9 @@ $word = $_GET['keyword'];
 
 $json = <<< JSON
 {
-    "John":56,
-    "Jennifer":45,
-    "James":44
+    "John":"56",
+    "Jennifer":"45",
+    "James":"44"
 }
 JSON;
 
