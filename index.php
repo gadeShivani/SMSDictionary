@@ -7,9 +7,9 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-if(isset($_GET['Body']))
+if(isset($_POST['Body']))
 {
-$word = $_GET['Body'];
+$word = $_POST['Body'];
 
 
 $json = <<< JSON
@@ -30,10 +30,11 @@ foreach ($jsonIterator as $key => $val) {
    if( $word == $key ){
 
     $response->message($val);
+    echo $response;
 
 }
 
 }
-print $response;
+
 }
 ?>
