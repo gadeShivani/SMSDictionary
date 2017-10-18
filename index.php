@@ -21,8 +21,8 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
   )
 );
 //print_r($urban_response);
-$obj=json_decode($urban_response,TRUE);
-echo $obj;
+echo gettype($urban_response);
+//
 
 
 $jsonIterator = new RecursiveIteratorIterator(
@@ -30,10 +30,6 @@ $jsonIterator = new RecursiveIteratorIterator(
     RecursiveIteratorIterator::SELF_FIRST);
 
 
-  //$name="body";
-  $meaning = $obj['body']['list'];
-  // print_r($meaning);
-    echo $meaning;
 foreach ($jsonIterator as $key => $val) {
 print_r($key);
 print_r($val);
