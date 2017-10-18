@@ -27,7 +27,7 @@ foreach ($meanings as $key=>$val){
     $meaning_send = $meaning_send . $val;
   }
 }
-$response->message($meaning_send);
+$response->message($key);
 echo $response;
 
 /*$meaning = $urban_response->raw_body;
