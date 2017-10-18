@@ -16,7 +16,10 @@ $urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p
 //print_r($urban_response);
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
-$meaning = $urban_response->raw_body;
+$meaning_result = $urban_response->body;
+$meanings = $meaning_result->meaning;
+print_r($meanings);
+/*$meaning = $urban_response->raw_body;
 $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
 $meaning_result = '';
@@ -24,7 +27,7 @@ $mean_results = $mean[0];
 print_r($mean_results);
 echo "--";
 
-
+1 mn
   foreach ($mean_results as $key=>$val){
     print_r($key);
     echo "--2";
@@ -32,8 +35,8 @@ echo "--";
       $meaning_result = $meaning_result . $val;
     }
   }
-
-
+1 mn
+ok chk this
 
 print_r( $meaning_result);
 //foreach ($defines as $define){
