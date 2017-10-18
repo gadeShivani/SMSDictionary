@@ -33,8 +33,8 @@ $jsonIterator = new RecursiveIteratorIterator(
     );
    //print_r($urban_response);
   $obj=json_encode($urban_response,TRUE);
-    $meaning = $obj['list'][5]['defination'];
-    print_r($meaning);
+    //$meaning = $obj['list'][5]['defination'];
+    print_r($obj);
     echo $meaning;
 foreach ($jsonIterator as $key => $val) {
 
