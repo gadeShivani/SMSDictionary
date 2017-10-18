@@ -3,7 +3,6 @@
 require_once 'twilio-php-master/Twilio/autoload.php'; // Loads the library
 require_once 'vendor/autoload.php';
 use Twilio\Twiml;
-$response = new Twiml;
 if(isset($_POST['Body']))
 {
 $word = $_POST['Body'];
@@ -22,12 +21,13 @@ $meanings = $meaning_result->meaning;
 $meanings = json_decode(json_encode($meanings),TRUE);
 $meaning_send = '';
 foreach ($meanings as $key=>$val){
-  print_r($key);
   if($val != ''){
     $meaning_send = $meaning_send . $val;
   }
 }
-$response->message($key);
+$response = new Twiml;
+
+$response->message($meaning_send);
 echo $response;
 
 /*$meaning = $urban_response->raw_body;
