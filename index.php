@@ -18,6 +18,8 @@ $urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p
 //$obj=json_encode($urban_response->body,TRUE);
 $meaning = $urban_response->raw_body;
 $defines = $meaning->meaning[1];
+print_r($meaning);
+echo gettype($meaning);
 //foreach ($defines as $define){
 
 //$definition = $define->definition;
@@ -25,8 +27,9 @@ $defines = $meaning->meaning[1];
  //break;
 
 //}
-$response->message($meaning);
-echo $response;
+
+//$response->message($meaning);
+//echo $response;
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
