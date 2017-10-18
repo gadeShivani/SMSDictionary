@@ -11,6 +11,7 @@ if(isset(keyword))
 {
 $word = $_GET['keyword'];
 echo $word;
+echo 'yes';
 }
 // // $json = './dictionary.json';
 // $json = <<< JSON
