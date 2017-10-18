@@ -20,10 +20,13 @@ $meaning = $urban_response->raw_body;
 $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
 $meaning_result = '';
-echo $mean;
+print_r($mean);
+echo "--";
 
 foreach($mean->entries as $row){
   foreach ($row as $key=>$val){
+    print_r($key);
+    echo "--2";
     if($val != ''){
       $meaning_result = $meaning_result . $val;
     }
@@ -31,7 +34,7 @@ foreach($mean->entries as $row){
 }
 
 
-echo $meaning_result;
+print_r( $meaning_result);
 //foreach ($defines as $define){
 
 //$definition = $define->definition;
