@@ -2,6 +2,7 @@
 // Get the PHP helper library from twilio.com/docs/php/install
 
 require_once 'twilio-php-master/Twilio/autoload.php'; // Loads the library
+require_once 'unirest-php/src/Unirest.php';
 use Twilio\Twiml;
 
 
