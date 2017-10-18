@@ -29,7 +29,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 
   //$name="body";
-  $meaning = $obj['body'];
+  $meaning = $obj['body']['list'];
   // print_r($meaning);
     echo $meaning;
 foreach ($jsonIterator as $key => $val) {
