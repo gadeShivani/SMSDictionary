@@ -7,7 +7,7 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-if(isset(keyword))
+if(isset($_GET['keyword']))
 {
 $word = $_GET['keyword'];
 echo $word;
