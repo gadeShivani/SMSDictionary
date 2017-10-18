@@ -27,8 +27,11 @@ $urban_response = Unirest\Request::get("https://mashape-community-urban-dictiona
 $meaning = $urban_response->body;
 $defines = $meaning->list;
 foreach ($defines as $define){
-  echo $define->definition;
+  $definition = $define->definition;
+  break;
 }
+$response->message($definition);
+echo $response;
 
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
