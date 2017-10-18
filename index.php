@@ -7,9 +7,9 @@ use Twilio\Twiml;
 
 
 $response = new Twiml;
-if(isset($_GET['keyword']))
+if(isset($_GET['Body']))
 {
-$word = $_GET['keyword'];
+$word = $_GET['Body'];
 
 
 $json = <<< JSON
