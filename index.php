@@ -7,25 +7,25 @@ $response = new Twiml;
 if(isset($_POST['Body']))
 {
 $word = $_POST['Body'];
-$urban_response = Unirest\Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
-  array(
-    "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK",
-    "Accept" => "text/plain"
-  )
+$urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p.mashape.com/definition/?entry=".$word,
+ array(
+   "X-Mashape-Key" => "CyTK04aDZimshlJZC3T5HOkTxBYhp12DjZpjsngu4YEAZTswj4",
+   "Accept" => "application/json"
+ )
 );
-//print_r($urban_response);
+print_r($urban_response);
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
-$meaning = $urban_response->body;
-$defines = $meaning->list;
-foreach ($defines as $define){
+//$meaning = $urban_response->body;
+//$defines = $meaning->list;
+//foreach ($defines as $define){
 
-  $definition = $define->definition;
+////  $definition = $define->definition;
 
-  break;
+//  break;
 
-}
-$response->message($definition);
+//}
+//$response->message($definition);
 echo $response;
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
