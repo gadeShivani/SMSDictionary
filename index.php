@@ -20,10 +20,10 @@ $meaning = $urban_response->raw_body;
 $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
 $meaning_result = '';
-print_r($mean);
+$mean_results = $mean[0];
 echo "--";
 
-foreach($mean->entries as $row){
+foreach($mean_results->entries as $row){
   foreach ($row as $key=>$val){
     print_r($key);
     echo "--2";
