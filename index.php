@@ -31,7 +31,7 @@ $jsonIterator = new RecursiveIteratorIterator(
         "Accept" => "text/plain"
       )
     );
-    //print_r($urban_response);
+    print_r($urban_response);
 
 foreach ($jsonIterator as $key => $val) {
 
