@@ -16,7 +16,8 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
    if( $body == $key ){
-	  
+	  var_dump($val);
+    die();
     $response->message($val);
 
 }
