@@ -17,7 +17,7 @@ $urban_response = Unirest\Request::get("https://twinword-word-graph-dictionary.p
 //https://github.com/Kong/unirest-php/issues/104
 //$obj=json_encode($urban_response->body,TRUE);
 $meaning = $urban_response->raw_body;
-//$defines = $meaning->meaning;
+$defines = $meaning->meaning;
 //foreach ($defines as $define){
 
 //$definition = $define->definition;
@@ -25,7 +25,7 @@ $meaning = $urban_response->raw_body;
  //break;
 
 //}
-$response->message($meaning);
+$response->message($defines);
 echo $response;
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
