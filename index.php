@@ -30,7 +30,7 @@ echo $obj;
     new RecursiveArrayIterator(json_decode($obj, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);*/
 
-  $meaning = $obj['list']['definition'];
+  $meaning = json_decode($obj['list']);
     echo $meaning;
 foreach ($jsonIterator as $key => $val) {
 print_r($key);
