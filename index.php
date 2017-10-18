@@ -14,24 +14,27 @@ $word = $_POST['Body'];
 
 
 
+$urban_response = Unirest\Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
+  array(
+    "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK",
+    "Accept" => "text/plain"
+  )
+);
+//print_r($urban_response);
+$obj=json_encode($urban_response,TRUE);
+
 $jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($json, TRUE)),
+    new RecursiveArrayIterator(json_decode($obj, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
-    $urban_response = Unirest\Request::get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=".$word,
-      array(
-        "X-Mashape-Key" => "iDPOerKXEemshKTvdIucGG5ZD8jEp1jqxw8jsnXDAKBp40usEK",
-        "Accept" => "text/plain"
-      )
-    );
-   //print_r($urban_response);
-  $obj=json_encode($urban_response,TRUE);
+
   //$name="body";
-    $meaning = $obj['body'];
-   print_r($meaning);
+  $meaning = $obj['body'];
+  // print_r($meaning);
     echo $meaning;
 foreach ($jsonIterator as $key => $val) {
-
+print_r($key);
+print_r($val);
    if( $word == $key ){
 
     $response->message($val);
