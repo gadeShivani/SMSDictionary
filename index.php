@@ -21,17 +21,18 @@ $defines = $meaning->meaning;
 $mean = (array) json_encode($meaning);
 $meaning_result = '';
 $mean_results = $mean[0];
+print_r($mean_results);
 echo "--";
 
-foreach($mean_results->entries as $row){
-  foreach ($row as $key=>$val){
+
+  foreach ($mean_results as $key=>$val){
     print_r($key);
     echo "--2";
     if($val != ''){
       $meaning_result = $meaning_result . $val;
     }
   }
-}
+
 
 
 print_r( $meaning_result);
